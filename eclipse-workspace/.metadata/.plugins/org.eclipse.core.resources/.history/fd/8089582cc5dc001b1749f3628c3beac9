@@ -1,0 +1,47 @@
+options
+{
+	static = false;
+	output_directory = "parser";
+}
+
+PARSER_BEGIN(ScannerTest)
+
+package parser;
+
+  public class ScannerTest {} // parser class specification
+
+PARSER_END(ScannerTest)
+
+
+SKIP :
+{ 
+		" " | "\t" | "\r" | "\n"
+	|
+		< "//" (~["\n"])* "\n" >
+}
+
+void Scan() :
+{}
+{ 
+	(
+		"if" 
+	| 
+		<IDENTIFIER> 
+	| 
+		<INTEGER>
+	| 
+		<REAL> 
+	)*
+	
+	"."	// end
+}
+
+// token specification
+TOKEN : 
+{
+		< INTEGER : (["0"-"9"])+ >
+  	| 
+  		< REAL : ( (["0"-"9"])+ "." (["0"-"9"])* ) | ( (["0"-"9"])* "." (["0"-"9"])+ ) >
+  	|
+		 < IDENTIFIER : ["a"-"z","A"-"Z"] (["a"-"z","A"-"Z","0"-"9"])* >
+}

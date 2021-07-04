@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\majbrit\Medieninformatik\Semester4\A1\A1\eclipse-workspace\.metadata\.plugins\org.eclipse.jdt.core
+2601637689.index
+3576005583.index

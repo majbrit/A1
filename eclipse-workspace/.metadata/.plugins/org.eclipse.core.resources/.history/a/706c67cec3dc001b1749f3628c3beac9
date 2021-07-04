@@ -1,0 +1,25 @@
+
+import parser.ParseException;
+import parser.ProgramScanner;
+
+public class Main 
+{
+    public static void main( String[] args )
+    {
+	    try
+	    {
+	    	ProgramScanner lScanner = new ProgramScanner( System.in );
+
+	    	lScanner.welcome();
+	    	
+	    	lScanner.Scan();
+		
+	    	System.out.println( "Success" );
+	    }
+	    catch (Exception e)
+	    {
+	    	System.out.println( "The password does not meet all requirements" );
+	    }
+
+    }
+}

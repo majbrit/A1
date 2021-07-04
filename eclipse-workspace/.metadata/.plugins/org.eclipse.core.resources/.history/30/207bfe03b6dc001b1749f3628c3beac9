@@ -1,0 +1,22 @@
+
+import parser.ParseException;
+import parser.ProgramScanner;
+
+public class Main 
+{
+    public static void main( String[] args )
+    {
+	    try
+	    {
+	    	ProgramScanner lScanner = new ProgramScanner( System.in );
+
+	    	lScanner.Scan();
+		
+	    	System.out.println( "Success" );
+	    }
+	    catch (ParseException e)
+	    {
+	    	System.out.println( e );
+	    }
+    }
+}
